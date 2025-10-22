@@ -1,0 +1,468 @@
+/* Custom CSS for BottomsCup SPA */
+
+/* Root Variables */
+:root {
+  --primary-color: #8B4513;
+  --secondary-color: #D2691E;
+  --accent-color: #FFF8DC;
+  --text-dark: #2C1810;
+  --text-muted: #5D4037;
+}
+
+/* Font Awesome Icons */
+.fas, .far, .fab {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 6 Brands" !important;
+  font-weight: 900;
+}
+
+.far {
+  font-weight: 400;
+}
+
+.fab {
+  font-weight: 400;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--accent-color);
+  padding-top: 76px; /* Account for fixed navbar */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* Custom Bootstrap Overrides */
+.bg-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+}
+
+.btn-outline-primary {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #F5F5DC 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+/* Navigation */
+.navbar {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(139, 69, 19, 0.1);
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.nav-link.active {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+/* Cards */
+.card {
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.menu-item {
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+}
+
+/* Forms */
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #E0E0E0;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.25);
+}
+
+/* Badges */
+.badge {
+  font-weight: 500;
+  padding: 0.5em 0.75em;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Page Transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Responsive Design */
+
+/* Tablet Landscape and below (1024px) */
+@media (max-width: 1024px) {
+  .display-4 {
+    font-size: 2.8rem;
+  }
+  
+  .display-5 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Tablet Portrait (768px) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+  
+  .hero-section {
+    min-height: auto !important;
+    padding: 3rem 0 !important;
+  }
+  
+  .display-4 {
+    font-size: 2.2rem !important;
+  }
+  
+  .display-5 {
+    font-size: 1.8rem;
+  }
+  
+  .btn-lg {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
+  /* Card adjustments */
+  .card-body {
+    padding: 1.25rem !important;
+  }
+  
+  /* Table responsiveness */
+  .table {
+    font-size: 0.9rem;
+  }
+  
+  /* Spacing adjustments */
+  .py-5 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Hero image adjustments */
+  .hero-image img {
+    max-width: 80% !important;
+  }
+}
+
+/* Mobile (576px) */
+@media (max-width: 576px) {
+  body {
+    padding-top: 65px;
+  }
+  
+  .display-4 {
+    font-size: 1.75rem !important;
+  }
+  
+  .display-5 {
+    font-size: 1.5rem !important;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+  
+  .hero-section {
+    min-height: auto !important;
+    padding: 2rem 0 !important;
+  }
+  
+  .card-body {
+    padding: 1rem !important;
+  }
+  
+  .btn-lg {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+  
+  h4 {
+    font-size: 1.15rem;
+  }
+  
+  h5 {
+    font-size: 1rem;
+  }
+  
+  /* Spacing */
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .py-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .mb-5 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .mb-3 {
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Hero image */
+  .hero-image img {
+    max-width: 100% !important;
+  }
+  
+  /* Icon sizes */
+  .display-4.fas, .display-4.far {
+    font-size: 2rem !important;
+  }
+  
+  /* Table */
+  .table {
+    font-size: 0.8rem;
+  }
+  
+  .table td, .table th {
+    padding: 0.5rem;
+  }
+  
+  /* Badges */
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.35em 0.5em;
+  }
+  
+  /* Forms */
+  .form-control, .form-select {
+    font-size: 0.9rem;
+  }
+  
+  /* Buttons group spacing */
+  .gap-3 {
+    gap: 0.5rem !important;
+  }
+  
+  .gap-2 {
+    gap: 0.35rem !important;
+  }
+  
+  /* Hide some icons on mobile for cleaner look */
+  .mobile-hide-icon {
+    display: none;
+  }
+}
+
+/* Extra small mobile (375px) */
+@media (max-width: 375px) {
+  .display-4 {
+    font-size: 1.5rem !important;
+  }
+  
+  .display-5 {
+    font-size: 1.3rem !important;
+  }
+  
+  .btn-lg {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Custom Utilities */
+.text-coffee {
+  color: var(--primary-color);
+}
+
+.bg-coffee {
+  background-color: var(--accent-color);
+}
+
+.border-coffee {
+  border-color: var(--primary-color);
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Focus States */
+.btn:focus,
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.25);
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    padding-top: 0;
+  }
+}
